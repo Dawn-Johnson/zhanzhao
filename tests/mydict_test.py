@@ -24,15 +24,4 @@ class TestDict(unittest.TestCase):
         self.assertTrue('key' in d)
         self.assertEqual(d['key'], 'value')
 
-    def test_keyerror(self):
-        d = Dict()
-        with self.assertRaises(KeyError):
-            value = d['empty']
 
-    def test_attrerror(self):
-        d = Dict()
-        with self.assertRaises(AttributeError):
-            value = d.empty
-
-if __name__ == '__main__':
-    unittest.main()
