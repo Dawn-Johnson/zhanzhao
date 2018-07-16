@@ -1,0 +1,7 @@
+{
+  "mydict_test.py::TestDict::test_attr": true, 
+  "mydict_test.py::TestDict::test_attrerror": true, 
+  "mydict_test.py::TestDict::test_init": true, 
+  "mydict_test.py::TestDict::test_key": true, 
+  "mydict_test.py::TestDict::test_keyerror": true
+}
