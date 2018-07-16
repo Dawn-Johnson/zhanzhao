@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               sh /usr/local/bin/py.test --verbose --junit-xml test-reports/results.xml tests/mydict_test.py
+               sh /usr/local/bin/py.test --verbose --junit-xml test-reports/results.xml ./tests/mydict_test.py
 		junit 'test-reports/results.xml'
             }
         }
