@@ -14,9 +14,14 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
+              when {
+               expression {
+                 currentBuild.result == null || currentBuild.result == 'SUCCESS' // 判断是否发生测试失败
+                }
+              }
+                steps {
                 echo 'Deploying....'
-            }
+              }
         }
     }
 }
