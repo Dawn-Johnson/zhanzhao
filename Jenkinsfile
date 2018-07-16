@@ -1,9 +1,7 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
-    triggers {
-        cron('H 4/* 0 0 1-5')
-	}
+
     stages {
         stage('Build') {
             steps {
@@ -12,7 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+               sh '/usr/local/bin/py.test --verbose --junit-xml test-reports/results.xml /opt/zhanzhao/tests/mydict_test.py'
+		junit 'test-reports/results.xml'
             }
         }
         stage('Deploy') {
