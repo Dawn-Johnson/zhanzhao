@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh """
                 cd my-project
+                npm install
                 npm run build
                 """
             }
