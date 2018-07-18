@@ -12,7 +12,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm run unit'
+                sh """
+                cd my-project
+                npm run unit
+                """
             }
         }
         stage('Deploy') {
