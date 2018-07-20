@@ -6,14 +6,16 @@ pipeline {
             steps {
                 sh """
                 cd my-project
-                npm install
                 npm run build
                 """
             }
         }
         stage('Test') {
             steps {
-                sh 'npm run unit'
+                sh """
+                cd my-project
+                npm run unit
+                """
             }
         }
         stage('Deploy') {
