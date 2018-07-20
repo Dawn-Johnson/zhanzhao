@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh """ 
+                sh """
+		cd my-project 
                 npm run build
                 """
             }
